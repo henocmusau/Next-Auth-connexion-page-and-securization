@@ -9,8 +9,8 @@ export const authOptions: NextAuthOptions = {
     //     strategy: 'jwt'
     // },
     pages: {
-        // signIn: '/login',
-        // error: '/error',
+        signIn: '/login',
+        error: '/login?error=true',
     },
 
     // Configure one or more authentication providers
