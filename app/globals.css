@@ -18,10 +18,15 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.linkBtn {
+  @apply px-6 py-2 rounded-xl text-white bg-indigo-700 hover:bg-indigo-500 text-xl duration-200;
+}
+
+.logoutBtn {
+  @apply px-6 py-2 rounded-xl text-white border border-red-700 hover:text-white hover:bg-red-700 text-xl duration-200;
 }
