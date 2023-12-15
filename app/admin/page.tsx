@@ -1,6 +1,12 @@
 import Link from 'next/link'
 import LogoutButton from '../components/LogoutButton'
-export default function AdminPage() {
+import { getServerSession } from "next-auth/next"
+import { authOptions } from '@/lib/auth'
+
+export default async function AdminPage() {
+
+    const session = await getServerSession(authOptions)
+
     return (
         <section className='flex flex-col items-center justify-center h-full text-left'>
             <h1 className='text-3xl'>Very Secret Page with Nuclear codes - HM</h1>
@@ -12,6 +18,9 @@ export default function AdminPage() {
             >
                 Go back to Home Page
             </Link>
+            <p className='my-6'>
+                {JSON.stringify(session?.user)}
+            </p>
 
             <LogoutButton />
         </section>

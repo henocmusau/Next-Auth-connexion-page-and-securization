@@ -1,6 +1,7 @@
 import { NextAuthOptions } from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from 'next-auth/providers/google';
 
 export const authOptions: NextAuthOptions = {
     // Secret for Next-auth, without this JWT encryption/decryption won't work
@@ -19,6 +20,11 @@ export const authOptions: NextAuthOptions = {
         //   clientId: process.env.GITHUB_APP_CLIENT_ID as string,
         //   clientSecret: process.env.GITHUB_APP_CLIENT_SECRET as string,
         // }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_ID as string,
+            clientSecret: process.env.GOOGLE_SECRET as string
+        }),
+
         CredentialsProvider({
             // The name to display on the sign in form (e.g. 'Sign in with...')
             name: 'Credentials',

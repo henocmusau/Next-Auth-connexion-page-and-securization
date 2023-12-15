@@ -27,8 +27,12 @@ body {
   @apply px-6 py-2 rounded-xl text-white bg-indigo-700 hover:bg-indigo-500 text-xl duration-200;
 }
 
+.providersBtn {
+  @apply px-6 py-2 rounded-xl text-white border border-indigo-700 w-full hover:bg-indigo-700 text-xl duration-200;
+}
+
 .logoutBtn {
-  @apply px-6 py-2 rounded-xl text-white border border-red-700 hover:text-white hover:bg-red-700 text-xl duration-200;
+  @apply px-6 py-2 rounded-xl text-white border border-red-700 hover:bg-red-700 text-xl duration-200;
 }
 
 .inputField {
