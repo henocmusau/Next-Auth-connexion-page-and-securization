@@ -53,16 +53,26 @@ export default function LoginForm() {
     };
 
     return (
-        <form onSubmit={handleConnect} className='flex flex-col gap-y-3 w-full md:w-[400px]'>
-            <h1 className='text-3xl mb-4'>Sign In</h1>
-            {
-                error.length > 0 ? <p className='rounded-xl p-2 bg-red-600/10 mb-2'>Wrong credentials !<br /> Please, enter a username and password to sign in.</p> : null
-            }
+        <>
+            <form onSubmit={handleConnect} className='flex flex-col gap-y-3 w-full md:w-[400px]'>
+                <h1 className='text-3xl mb-4'>Sign In</h1>
+                {
+                    error.length > 0 ? <p className='rounded-xl p-2 bg-red-600/10 mb-2'>Wrong credentials !<br /> Please, enter a username and password to sign in.</p> : null
+                }
 
-            <InputField value={username} handleChange={handleUsernameChange} name='username' label='Username' />
-            <InputField value={password} handleChange={handlePasswordChange} type='password' name='username' label='Password' />
+                <InputField value={username} handleChange={handleUsernameChange} name='username' label='Username' />
+                <InputField value={password} handleChange={handlePasswordChange} type='password' name='username' label='Password' />
 
-            <SubmitButton />
-        </form>
+                <SubmitButton />
+            </form>
+            <p className='my-7 w-full text-center'>OR</p>
+            <button
+                type='button'
+                className='providersBtn'
+                onClick={() => signIn("google")}
+            >
+                Sign In with Google
+            </button>
+        </>
     )
 }
