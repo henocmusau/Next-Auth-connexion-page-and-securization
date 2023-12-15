@@ -17,7 +17,7 @@ export default function LoginForm() {
 
     useEffect(() => {
         if (search) setError(search)
-    }, [searchParams])
+    }, [search])
 
     const router = useRouter()
 
