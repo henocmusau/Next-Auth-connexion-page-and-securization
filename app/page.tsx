@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import LogoutButton from './components/LogoutButton'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       >
         Access
       </Link>
+      <LogoutButton />
     </section>
   )
 }
